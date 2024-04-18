@@ -29,4 +29,6 @@ public class BookDto {
     @DecimalMin(value = "0.00", message = "Book price must be higher than 0.00")
     private BigDecimal price;
 
+    @NotNull
+    private Integer inventoryCount;
 }

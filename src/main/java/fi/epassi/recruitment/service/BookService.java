@@ -56,12 +56,24 @@ public class BookService {
         throw new BookNotFoundException(bookDto.getIsbn().toString());
     }
 
+    public Integer getInventoryByIsbn(UUID isbn) {
+        BookModel book = bookRepository.findByIsbn(isbn).orElseThrow(() -> new BookNotFoundException(isbn.toString()));
+        return book.getInventoryCount();
+    }
+
+    public void updateInventory(UUID isbn, Integer newInventoryCount) {
+        BookModel book = bookRepository.findByIsbn(isbn).orElseThrow(() -> new BookNotFoundException(isbn.toString()));
+        book.setInventoryCount(newInventoryCount);
+        bookRepository.save(book);
+    }
+
     private static BookModel toBookModel(BookDto bookDto) {
         return BookModel.builder()
             .isbn(bookDto.getIsbn())
             .author(bookDto.getAuthor())
             .title(bookDto.getTitle())
             .price(bookDto.getPrice())
+                .inventoryCount(bookDto.getInventoryCount())
             .build();
     }
 
@@ -71,6 +83,7 @@ public class BookService {
             .author(bookModel.getAuthor())
             .title(bookModel.getTitle())
             .price(bookModel.getPrice())
+                .inventoryCount(bookModel.getInventoryCount())
             .build();
     }
 }

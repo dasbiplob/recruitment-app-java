@@ -59,4 +59,15 @@ public class BookController {
         return ApiResponse.ok();
     }
 
+    @GetMapping("/{isbn}/inventory")
+    public ApiResponse<Integer> getInventoryByIsbn(@PathVariable("isbn") UUID isbn) {
+        Integer inventoryCount = bookService.getInventoryByIsbn(isbn);
+        return ApiResponse.ok(inventoryCount);
+    }
+
+    @PutMapping("/{isbn}/inventory")
+    public ApiResponse<Void> updateInventory(@PathVariable("isbn") UUID isbn, @RequestBody @Validated Integer newInventoryCount) {
+        bookService.updateInventory(isbn, newInventoryCount);
+        return ApiResponse.ok();
+    }
 }
