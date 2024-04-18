@@ -88,7 +88,7 @@ Available REST API methods:
 1. Get list of all books: `GET /api/v1/books`, responds with body of `List<BookDto>`.
 
 ```bash
-curl -X GET 'http://localhost:8080/api/v1/books' -H 'Content-Type: application/json'
+  curl -X GET 'http://localhost:8080/api/v1/books' -H 'Content-Type: application/json'
 ```
 
 2. Get book by ISBN: `GET /api/v1/books/{isbn}`, responds with body of `BookDto`.
