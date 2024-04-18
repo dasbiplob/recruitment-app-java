@@ -1,5 +1,8 @@
-package fi.epassi.recruitment.book;
+package fi.epassi.recruitment.service;
 
+import fi.epassi.recruitment.book.BookDto;
+import fi.epassi.recruitment.book.BookModel;
+import fi.epassi.recruitment.repository.BookRepository;
 import fi.epassi.recruitment.exception.BookNotFoundException;
 import java.util.List;
 import java.util.UUID;

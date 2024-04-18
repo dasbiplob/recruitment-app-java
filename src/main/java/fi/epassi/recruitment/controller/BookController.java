@@ -1,10 +1,13 @@
-package fi.epassi.recruitment.book;
+package fi.epassi.recruitment.controller;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import fi.epassi.recruitment.api.ApiResponse;
 import java.util.List;
 import java.util.UUID;
+
+import fi.epassi.recruitment.book.BookDto;
+import fi.epassi.recruitment.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;

@@ -17,6 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import fi.epassi.recruitment.BaseIntegrationTest;
 import java.util.UUID;
+
+import fi.epassi.recruitment.repository.BookRepository;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

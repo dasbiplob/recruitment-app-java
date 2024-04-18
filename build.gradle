@@ -45,6 +45,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core:9.19.4'
     implementation 'org.flywaydb:flyway-mysql:9.19.4'
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    runtimeOnly 'com.h2database:h2'
+
 
     // -- Others
     implementation 'org.apache.commons:commons-lang3:3.0'
