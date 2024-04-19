@@ -43,6 +43,7 @@ public class BookModel {
     private BigDecimal price;
 
     @NotNull
+    @Column(name = "inventorycount")
     private Integer inventoryCount;
 
 }

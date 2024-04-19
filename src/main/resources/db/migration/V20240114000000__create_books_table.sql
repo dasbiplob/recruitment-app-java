@@ -4,5 +4,6 @@ CREATE TABLE `books`
     `author` varchar(64)    NOT NULL,
     `title`  varchar(128)   NOT NULL,
     `price`  decimal(10, 2) NOT NULL,
+    `inventorycount` INT NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -66,7 +66,8 @@ public class BookController {
     }
 
     @PutMapping("/{isbn}/inventory")
-    public ApiResponse<Void> updateInventory(@PathVariable("isbn") UUID isbn, @RequestBody @Validated Integer newInventoryCount) {
+    public ApiResponse<Void> updateInventory(@PathVariable("isbn") UUID isbn,
+                                             @RequestBody @Validated Integer newInventoryCount) {
         bookService.updateInventory(isbn, newInventoryCount);
         return ApiResponse.ok();
     }
