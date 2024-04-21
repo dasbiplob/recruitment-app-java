@@ -56,7 +56,7 @@ public class BookService {
         throw new BookNotFoundException(bookDto.getIsbn().toString());
     }
 
-    public Integer getInventoryByIsbn(UUID isbn) {
+        public Integer getInventoryByIsbn(UUID isbn) {
         BookModel book = bookRepository.findByIsbn(isbn).orElseThrow(() -> new BookNotFoundException(isbn.toString()));
         return book.getInventoryCount();
     }

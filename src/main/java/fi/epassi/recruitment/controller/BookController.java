@@ -58,7 +58,6 @@ public class BookController {
         bookService.deleteBookWithIsbn(isbn);
         return ApiResponse.ok();
     }
-
     @GetMapping("/{isbn}/inventory")
     public ApiResponse<Integer> getInventoryByIsbn(@PathVariable("isbn") UUID isbn) {
         Integer inventoryCount = bookService.getInventoryByIsbn(isbn);
